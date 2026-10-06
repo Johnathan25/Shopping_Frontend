@@ -205,7 +205,7 @@ const ReportsAiChatbot = () => {
               }`}
             >
               <div
-                className={`w-7 h-7 rounded-md flex items-center justify-center shrink-0 text-white ${
+                className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 text-white ${
                   msg.sender === "user" ? "bg-slate-700" : "bg-purple-600"
                 }`}
               >
@@ -258,7 +258,7 @@ const ReportsAiChatbot = () => {
                       {msg.extraContext.topParts.map((part, idx) => (
                         <div
                           key={part._id || idx}
-                          className="bg-slate-950 p-1.5 rounded-md border border-slate-800/50 flex justify-between"
+                          className="bg-slate-950 p-1.5 rounded-lg border border-slate-800/50 flex justify-between"
                         >
                           <span className="text-slate-300 truncate max-w-[80px]">{part.partName}</span>
                           <span className="text-amber-400">{part.quantityUsed} قطعة</span>

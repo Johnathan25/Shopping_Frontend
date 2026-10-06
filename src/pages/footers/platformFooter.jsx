@@ -9,7 +9,6 @@ import {
   CheckCircle2,
   Store,
   ArrowUpLeft,
-  MessageCircle
 } from "lucide-react";
 import {
   FaFacebookF,
@@ -18,13 +17,11 @@ import {
   FaInstagram,
   FaTiktok,
   FaTelegramPlane,
-  FaWhatsapp,
 } from "react-icons/fa";
 
 // الإعدادات الافتراضية لمنصة التجارة الإلكترونية السحابية
 export const defaultPlatformSettings = {
   platformName: "منصة المتاجر",
-<<<<<<< HEAD
   description: "كل اللي محتاجه عشان تبيع أونلاين في مكان واحد؛ متجر كامل باسمك، متابعة سهلة لطلبات زباينك، واستلام أرباحك أول بأول.",
   address:"القاهرة مصر",
   phoneNumber: ["+20 1094124323", "+201270857659"],
@@ -37,22 +34,6 @@ export const defaultPlatformSettings = {
     tiktok: "https://tiktok.com",
     telegram: "https://t.me",
   },
-=======
-  description: "كل اللي محتاجه عشان تبيع أونلاين في مكان واحد؛ متجر كامل باسمك، متابعة سهلة لطلبات زباينك.",
-  address:"القاهرة مصر",
-  phoneNumber: ["+20 1094124323", "+201270857659"],
-  email: ["johnathanibraheem7@gmail.com", "kiroloesreda@gmail.com"],
- socialMedia: {
-  facebook: import.meta.env.VITE_FACEBOOK_URL || "https://facebook.com",
-  instagram: import.meta.env.VITE_INSTAGRAM_URL || "https://instagram.com",
-  linkedIn: import.meta.env.VITE_LINKEDIN_URL || "https://linkedin.com",
-  youtube: import.meta.env.VITE_YOUTUBE_URL || "https://youtube.com",
-  tiktok: import.meta.env.VITE_TIKTOK_URL || "https://tiktok.com",
-  telegram: import.meta.env.VITE_TELEGRAM_URL || "https://t.me",
-
- whatsapp: import.meta.env.VITE_WHATSAPP_URL || "https://wa.me/201000000000",
-},
->>>>>>> 36f8532 (Initial commit)
 };
 
 const Footer = ({ settings = defaultPlatformSettings }) => {
@@ -78,7 +59,6 @@ const Footer = ({ settings = defaultPlatformSettings }) => {
     { key: "youtube", Icon: FaYoutube },
     { key: "tiktok", Icon: FaTiktok },
     { key: "telegram", Icon: FaTelegramPlane },
-    { key: "whatsapp", Icon: FaWhatsapp },
   ];
 
   // روابط المنصة السحابية
@@ -102,7 +82,7 @@ const Footer = ({ settings = defaultPlatformSettings }) => {
                 النشرة الدورية
               </span>
               <h3 className="text-2xl sm:text-3xl font-bold text-dark mb-2">
-                كن أول من يعرف كل جديد
+                كن أول من يعرف جديد التجارة السحابية
               </h3>
               <p className="text-gray-600 text-sm mb-8 font-normal">
                 احصل على نصائح لنمو متجرك، وتحديثات الميزات، وأحدث أدوات المبيعات أولاً بأول.
@@ -210,7 +190,7 @@ const Footer = ({ settings = defaultPlatformSettings }) => {
               {/* العنوان */}
               {settings.address && (
                 <div className="flex items-start gap-3.5">
-                  <div className="w-8 h-8 rounded-md bg-accent/40 border border-accent flex items-center justify-center flex-shrink-0 text-dark">
+                  <div className="w-8 h-8 rounded-lg bg-accent/40 border border-accent flex items-center justify-center flex-shrink-0 text-dark">
                     <MapPin size={15} />
                   </div>
                   <span className="text-gray-600 text-sm leading-relaxed font-normal pt-1">
@@ -222,7 +202,7 @@ const Footer = ({ settings = defaultPlatformSettings }) => {
               {/* أرقام الهواتف */}
               {settings.phoneNumber?.some((p) => p !== "") && (
                 <div className="flex items-start gap-3.5">
-                  <div className="w-8 h-8 rounded-md bg-accent/40 border border-accent flex items-center justify-center flex-shrink-0 text-dark">
+                  <div className="w-8 h-8 rounded-lg bg-accent/40 border border-accent flex items-center justify-center flex-shrink-0 text-dark">
                     <Phone size={15} />
                   </div>
                   <div className="flex flex-col gap-1 pt-1" dir="ltr">
@@ -244,7 +224,7 @@ const Footer = ({ settings = defaultPlatformSettings }) => {
               {/* البريد الإلكتروني */}
               {settings.email?.some((e) => e !== "") && (
                 <div className="flex items-start gap-3.5">
-                  <div className="w-8 h-8 rounded-md bg-accent/40 border border-accent flex items-center justify-center flex-shrink-0 text-dark">
+                  <div className="w-8 h-8 rounded-lg bg-accent/40 border border-accent flex items-center justify-center flex-shrink-0 text-dark">
                     <Mail size={15} />
                   </div>
                   <div className="flex flex-col gap-1 pt-1" dir="ltr">

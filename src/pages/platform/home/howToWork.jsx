@@ -12,18 +12,18 @@ const SKIN = "#F2C9A5";
 const HAIR = "#1F3F63";
 
 const STEPS = [
-  { id: "all", label: "عرض المخطط كاملاً" },
-  { id: "platform", label: "١. المنصة المركزية" },
-  { id: "merchant", label: "٢. التاجر المشترك" },
-  { id: "store", label: "٣. المتجر المستقل" },
-  { id: "client", label: "٤. المشتري والطلب" },
+  { id: "all", label: "شوف الدورة كاملة" },
+  { id: "platform", label: "١. السيرفر والنظام" },
+  { id: "merchant", label: "٢. لوحة تحكم التاجر" },
+  { id: "store", label: "٣. متجرك الخاص" },
+  { id: "client", label: "٤. الزبون والطلب" },
 ];
 
 const CARDS = [
-  { id: "platform", icon: Server, title: "١. المحرك السحابي (SaaS)", text: "يعزل قواعد بيانات التجار، يدير الخوادم ويضمن استقرار وأمان النظام بالكامل." },
-  { id: "merchant", icon: User, title: "٢. التاجر المشترك", text: "يشترك التاجر ويدير منتجاته ويحدد ألوانه وهويته البصرية عبر لوحة تحكم ذكية." },
-  { id: "store", icon: Store, title: "٣. المتجر المستقل (Subdomain)", text: "يظهر فورياً متجر منفصل تماماً يحمل اسم التاجر دون أن يظهر اسم المنصة الأم." },
-  { id: "client", icon: ShoppingBag, title: "٤. المشتري والطلب الفوري", text: "يدخل الزبون ويشتري بأمان وتتحول مستحقات البيع مباشرة لحساب التاجر." },
+  { id: "platform", icon: Server, title: "١. النظام السحابي الذكي", text: "بيفصل بيانات كل تاجر لوحده، وبيضمن إن موقعك يفضل شغال سريع ومن غير أي أعطال." },
+  { id: "merchant", icon: User, title: "٢. التاجر (حضرتك)", text: "بتسجل حسابك وتضيف بضاعتك وتختار ألوانك وشعارك بسهولة من الموبايل أو الكمبيوتر." },
+  { id: "store", icon: Store, title: "٣. متجرك المنفصل تماماً", text: "بيظهر فوراً متجر خاص بيك وباسمك، كأنه مبرمج ليك مخصوص ومحدش بيعرف المنصة المشغلة." },
+  { id: "client", icon: ShoppingBag, title: "٤. زبونك والطلب السريع", text: "الزبون بيدخل يختار حاجته ويدفع بأمان، وفلوس الطلب بتوصلك أنت مباشرة." },
 ];
 
 /* نص عربي في SVG */
@@ -162,9 +162,20 @@ export default function Sketch() {
   return (
     <div dir="rtl" className="bg-white text-gray-800 font-sans min-h-screen">
       <style>{`
+        @keyframes fadeInSoft {
+          from { opacity: 0; transform: translateY(12px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .anim-fade { animation: fadeInSoft 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        
         @keyframes flow { to { stroke-dashoffset: -22; } }
         .flow { animation: flow 1.1s linear infinite; }
-        @media (prefers-reduced-motion: reduce) { .flow { animation: none; } }
+        @media (prefers-reduced-motion: reduce) { 
+          .flow { animation: none; }
+          .anim-fade { animation: none; }
+        }
       `}</style>
 
       {/* الترويسة */}
@@ -172,24 +183,34 @@ export default function Sketch() {
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#3368a00d_1px,transparent_1px),linear-gradient(to_bottom,#3368a00d_1px,transparent_1px)] bg-[size:32px_32px]" />
         </div>
+<<<<<<< HEAD
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-accent/40 border border-accent text-dark text-xs font-bold mb-4">
            
             <span>المخطط المعماري التفاعلي (System Architecture Flow)</span>
+=======
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center anim-fade">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-md bg-accent/40 border border-accent text-dark text-xs font-bold mb-4 transition-transform hover:scale-105 duration-200">
+            <span>إزاي متجرك بيشتغل خطوة بخطوة</span>
+>>>>>>> 36f8532 (Initial commit)
           </div>
-          <h1 className="text-3xl sm:text-5xl font-light text-gray-900 tracking-tight mb-3">
-            مخطط منظومة <span className="font-bold text-dark">المتاجر السحابية</span>
+          <h1 className="text-3xl sm:text-5xl font-light text-gray-900 tracking-tight leading-snug sm:leading-tight mb-3">
+            <span className="font-bold text-dark">
+              رحلة الشغل مع متجرك الإلكتروني
+            </span>
           </h1>
           <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            توضيح يبيّن ترابط المنصة المركزية والمتاجر المستقلة ورحلة التاجر والمشتري.
+            من أول ما تفتح حسابك وتضيف بضاعتك، لحد ما زبونك يدخل يشتري وفلوسك توصلك في ثواني.
           </p>
           <div className="flex flex-wrap justify-center gap-2 mt-6">
             {STEPS.map((s) => (
               <button
                 key={s.id}
                 onClick={() => setActive(s.id)}
-                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
-                  active === s.id ? "bg-dark text-white shadow-sm" : "bg-ligth/30 text-dark hover:bg-ligth/60"
+                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 active:scale-95 ${
+                  active === s.id
+                    ? "bg-dark text-white shadow-sm scale-105"
+                    : "bg-ligth/30 text-dark hover:bg-ligth/60 hover:-translate-y-0.5"
                 }`}
               >
                 {s.label}
@@ -202,10 +223,10 @@ export default function Sketch() {
       {/* الرسم */}
       <section className="py-12 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#FAFDFD] border border-accent/60 rounded-3xl p-6 sm:p-10 shadow-sm">
+          <div className="bg-[#FAFDFD] border border-accent/60 rounded-3xl p-6 sm:p-10 shadow-sm anim-fade delay-1">
             <div className="flex items-center gap-1.5 mb-4 text-xs font-bold text-dark border-b border-accent/40 pb-3">
-              <MousePointerClick size={16} className="text-brown" />
-              <span>اضغط على أي عنصر لإبراز مساره</span>
+              <MousePointerClick size={16} className="text-brown animate-pulse" />
+              <span>اضغط على أي جزء وشوف حركته ماشية إزاي</span>
             </div>
 
             <div className="w-full overflow-x-auto">
@@ -221,50 +242,50 @@ export default function Sketch() {
 
                 {/* ===== الأسهم ===== */}
                 {/* التاجر ← المنصة */}
-                <path className="flow" d="M 335 432 Q 235 445 145 245" fill="none" stroke={DARK} strokeWidth="2.5" strokeDasharray="6 5" markerEnd="url(#ah-dark)" opacity={on("merchant", "platform")} />
+                <path className="flow transition-opacity duration-300" d="M 335 432 Q 235 445 145 245" fill="none" stroke={DARK} strokeWidth="2.5" strokeDasharray="6 5" markerEnd="url(#ah-dark)" opacity={on("merchant", "platform")} />
                 {/* المنصة ← المتجر */}
-                <path className="flow" d="M 155 145 Q 280 40 402 110" fill="none" stroke={DARK} strokeWidth="2.5" strokeDasharray="6 5" markerEnd="url(#ah-dark)" opacity={on("platform", "store")} />
+                <path className="flow transition-opacity duration-300" d="M 155 145 Q 280 40 402 110" fill="none" stroke={DARK} strokeWidth="2.5" strokeDasharray="6 5" markerEnd="url(#ah-dark)" opacity={on("platform", "store")} />
                 {/* الزبون ← المتجر */}
-                <path className="flow" d="M 775 295 Q 740 120 582 110" fill="none" stroke={MID} strokeWidth="2.5" strokeDasharray="6 5" markerEnd="url(#ah-mid)" opacity={on("client", "store")} />
+                <path className="flow transition-opacity duration-300" d="M 775 295 Q 740 120 582 110" fill="none" stroke={MID} strokeWidth="2.5" strokeDasharray="6 5" markerEnd="url(#ah-mid)" opacity={on("client", "store")} />
 
-                <Pill x={239} y={392} w={150} color={DARK} op={on("merchant", "platform")}>١. اشتراك وإدارة المتجر</Pill>
-                <Pill x={278} y={84} w={186} color={DARK} op={on("platform", "store")}>٢. توليد النطاق والمتجر المعزول</Pill>
-                <Pill x={745} y={178} w={156} color={MID} op={on("client", "store")}>٣. تصفح وشراء ودفع فوري</Pill>
+                <Pill x={239} y={392} w={150} color={DARK} op={on("merchant", "platform")}>١. بتسجل وتظبط متجرك</Pill>
+                <Pill x={278} y={84} w={186} color={DARK} op={on("platform", "store")}>٢. بنفتح رابط متجرك المباشر</Pill>
+                <Pill x={745} y={178} w={156} color={MID} op={on("client", "store")}>٣. الزبون بيطلب ويدفع فوراً</Pill>
 
                 {/* ===== المنصة ===== */}
-                <g transform="translate(10 100)" className="cursor-pointer transition-opacity duration-300" opacity={on("platform")} onClick={() => setActive("platform")}>
+                <g transform="translate(10 100)" className="cursor-pointer transition-all duration-300 hover:scale-[1.02]" opacity={on("platform")} onClick={() => setActive("platform")}>
                   <PlatformArt />
-                  <T x="85" y="198" size="15" fill={DARK} weight="bold">المنصة المركزية</T>
-                  <T x="85" y="216" size="11" fill={MID} weight="bold">SaaS Core Platform</T>
-                  <T x="85" y="238" size="11">عزل قواعد البيانات</T>
-                  <T x="85" y="255" size="11">توجيه النطاقات الفرعية</T>
-                  <T x="85" y="272" size="11">حماية وتشفير SSL</T>
+                  <T x="85" y="198" size="15" fill={DARK} weight="bold">محرك التشغيل السحابي</T>
+                  <T x="85" y="216" size="11" fill={MID} weight="bold">شغال في ضهرك ٢٤ ساعة</T>
+                  <T x="85" y="238" size="11">بياناتك معزولة ومحمية</T>
+                  <T x="85" y="255" size="11">تجهيز رابط المتجر تلقائياً</T>
+                  <T x="85" y="272" size="11">حماية وتشفير عالي وأمان</T>
                 </g>
 
                 {/* ===== المتجر ===== */}
-                <g transform="translate(400 50)" className="cursor-pointer transition-opacity duration-300" opacity={on("store")} onClick={() => setActive("store")}>
+                <g transform="translate(400 50)" className="cursor-pointer transition-all duration-300 hover:scale-[1.02]" opacity={on("store")} onClick={() => setActive("store")}>
                   <StoreArt />
-                  <T x="90" y="170" size="15" fill={DARK} weight="bold">المتجر المستقل (Tenant)</T>
-                  <T x="90" y="188" size="11" fill={MID} weight="bold" mono>store1.mdkark.com</T>
-                  <T x="90" y="210" size="11">هوية وألوان وشعار خاص</T>
-                  <T x="90" y="227" size="11">كتالوج المنتجات والمخزون</T>
-                  <T x="90" y="244" size="11">سلة ودفع إلكتروني</T>
+                  <T x="90" y="170" size="15" fill={DARK} weight="bold">متجرك المستقل للزبائن</T>
+                  <T x="90" y="188" size="11" fill={MID} weight="bold" mono>yourstore.mdkark.com</T>
+                  <T x="90" y="210" size="11">اسمك وشعارك وألوانك فقط</T>
+                  <T x="90" y="227" size="11">عرض المنتجات وتحديث الكميات</T>
+                  <T x="90" y="244" size="11">سلة شراء وطرق دفع سريعة</T>
                 </g>
 
                 {/* ===== التاجر ===== */}
-                <g transform="translate(335 330)" className="cursor-pointer transition-opacity duration-300" opacity={on("merchant")} onClick={() => setActive("merchant")}>
+                <g transform="translate(335 330)" className="cursor-pointer transition-all duration-300 hover:scale-[1.02]" opacity={on("merchant")} onClick={() => setActive("merchant")}>
                   <MerchantArt />
-                  <T x="72" y="154" size="14" fill={DARK} weight="bold">التاجر (Customer)</T>
-                  <T x="72" y="173" size="11">يتحكم بالمتجر ويخصص المظهر</T>
-                  <T x="72" y="190" size="10.5" fill="#888">لوحة تحكم للمنتجات والمبيعات</T>
+                  <T x="72" y="154" size="14" fill={DARK} weight="bold">التاجر (صاحب البيزنس)</T>
+                  <T x="72" y="173" size="11">بتدير كل حاجة من مكان واحد</T>
+                  <T x="72" y="190" size="10.5" fill="#888">متابعة الطلبات، الأسعار، والمبيعات</T>
                 </g>
 
                 {/* ===== الزبون ===== */}
-                <g transform="translate(735 300)" className="cursor-pointer transition-opacity duration-300" opacity={on("client")} onClick={() => setActive("client")}>
+                <g transform="translate(735 300)" className="cursor-pointer transition-all duration-300 hover:scale-[1.02]" opacity={on("client")} onClick={() => setActive("client")}>
                   <ClientArt />
-                  <T x="52" y="164" size="14" fill={MID} weight="bold">الزبون (Client)</T>
-                  <T x="52" y="183" size="11">يتصفح ويشتري مباشرة</T>
-                  <T x="52" y="200" size="10.5" fill="#888">تجربة تسوق سريعة ومستقلة</T>
+                  <T x="52" y="164" size="14" fill={MID} weight="bold">الزبون والمشتري</T>
+                  <T x="52" y="183" size="11">بيدخل يشتري بضغطة زر</T>
+                  <T x="52" y="200" size="10.5" fill="#888">تجربة سهلة ومريحة من موبايله</T>
                 </g>
               </svg>
             </div>
@@ -275,12 +296,14 @@ export default function Sketch() {
                 <div
                   key={id}
                   onClick={() => setActive(id)}
-                  className={`cursor-pointer p-4 rounded-2xl border transition-all ${
-                    active === id ? "border-dark bg-ligth/30 shadow-sm" : "border-accent/60 bg-white hover:border-brown/40"
+                  className={`group cursor-pointer p-4 rounded-2xl border transition-all duration-200 active:scale-[0.98] ${
+                    active === id
+                      ? "border-dark bg-ligth/30 shadow-sm -translate-y-1"
+                      : "border-accent/60 bg-white hover:border-dark/60 hover:shadow-md hover:-translate-y-0.5"
                   }`}
                 >
                   <div className="flex items-center gap-2 mb-1.5 text-dark font-bold text-xs">
-                    <Icon size={16} className="text-brown" />
+                    <Icon size={16} className="text-brown transition-transform duration-200 group-hover:scale-110" />
                     <span>{title}</span>
                   </div>
                   <p className="text-[11px] text-gray-500 leading-relaxed">{text}</p>
@@ -290,15 +313,18 @@ export default function Sketch() {
           </div>
 
           {/* المميزات */}
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 anim-fade delay-2">
             {[
-              { icon: Database, t: "عزل تام للبيانات", d: "لا يمكن لتاجر رؤية طلبات أو مبيعات أي متجر آخر، كل قاعدة بيانات مستقلة بحد ذاتها." },
-              { icon: Sliders, t: "حرية التصميم والمظهر", d: "تغيير الألوان والخطوط وترتيب الأقسام يحدث لحظياً دون أي تعديل في الكود." },
-              { icon: Globe, t: "نطاق فرعي فوري", d: "بمجرد تسجيل الحساب يتم إطلاق رابط (yourstore.mdkark.com) مع شهادة SSL مجانية." },
-            ].map(({ icon: Icon, t, d }) => (
-              <div key={t} className="bg-white p-5 rounded-2xl border border-accent flex items-start gap-3 shadow-sm">
-                <div className="w-10 h-10 rounded-xl bg-accent/30 text-dark flex items-center justify-center flex-shrink-0">
-                  <Icon size={18} />
+              { icon: Database, t: "بياناتك في أمان تام", d: "محدش يقدر يشوف مبيعاتك ولا طلباتك؛ متجرك مقفول على نفسه ومستقل تماماً." },
+              { icon: Sliders, t: "شكله على ذوقك وبراحتك", d: "غير الألوان، اللوجو، وترتيب أقسامك بلمسة واحدة ومن غير ما تحتاج لأي مبرمج." },
+              { icon: Globe, t: "رابط خاص يشتغل فوراً", d: "أول ما تسجل، متجرك بيكون جاهز برابط مباشر وشهادة أمان مجانية بدون انتظار." },
+            ].map(({ icon: Icon, t, d }, idx) => (
+              <div
+                key={t}
+                className="group bg-white p-5 rounded-2xl border border-accent flex items-start gap-3 shadow-sm hover:shadow-md hover:border-dark/60 hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="w-10 h-10 rounded-xl bg-accent/30 text-dark flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover:bg-dark group-hover:text-white">
+                  <Icon size={18} className="transition-transform duration-300 group-hover:scale-110" />
                 </div>
                 <div>
                   <h4 className="text-xs font-bold text-dark mb-1">{t}</h4>
@@ -311,10 +337,10 @@ export default function Sketch() {
           <div className="mt-12 text-center">
             <Link
               to="/register"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-dark text-white rounded-xl hover:bg-dark/90 transition-all font-semibold text-sm shadow-md"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-dark text-white rounded-xl hover:bg-dark/90 hover:shadow-lg hover:-translate-y-0.5 active:scale-95 transition-all duration-200 font-semibold text-sm shadow-md group"
             >
-              <span>ابدأ الآن بتأسيس متجرك السحابي</span>
-              <ArrowLeft size={16} />
+              <span>يلا نبدأ.. افتح متجرك دلوقتي</span>
+              <ArrowLeft size={16} className="group-hover:-translate-x-1.5 transition-transform duration-200" />
             </Link>
           </div>
         </div>

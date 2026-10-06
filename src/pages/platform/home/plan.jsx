@@ -154,7 +154,11 @@ export default function Plans() {
         </div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center animate-fadeIn">
+<<<<<<< HEAD
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/40 border border-accent text-dark text-xs font-bold mb-6">
+=======
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-md bg-accent/40 border border-accent text-dark text-xs font-bold mb-6">
+>>>>>>> 36f8532 (Initial commit)
             
             <span>تسعير واضح وشفاف بدون مصاريف خفية</span>
           </div>
@@ -399,7 +403,7 @@ export default function Plans() {
                 className="p-6 rounded-2xl border border-accent/80 bg-white hover:border-brown/40 shadow-sm transition-all"
               >
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-accent/30 flex items-center justify-center text-dark flex-shrink-0 mt-0.5">
+                  <div className="w-8 h-8 rounded-md bg-accent/30 flex items-center justify-center text-dark flex-shrink-0 mt-0.5">
                     <HelpCircle size={18} />
                   </div>
                   <div>
@@ -413,7 +417,10 @@ export default function Plans() {
 
           {/* شارة الأمان السفلية */}
           <div className="flex items-center justify-center gap-2 text-xs text-gray-400 mt-12">
+<<<<<<< HEAD
             <ShieldCheck size={16} className="text-brown" />
+=======
+>>>>>>> 36f8532 (Initial commit)
             <span>دفع آمن بنسبة 100% مع ضمان استرجاع الأموال خلال 7 أيام</span>
           </div>
         </div>

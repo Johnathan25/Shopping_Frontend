@@ -50,7 +50,7 @@ const BankAutocomplete = ({
         value={value || ""}
         placeholder={placeholder}
         autoComplete="off"
-        className="w-full p-2 bg-ligth/20 border rounded-lg text-xs font-bold outline-none focus:border-brown"
+        className="w-full p-2 bg-ligth/20 border rounded-md text-xs font-bold outline-none focus:border-brown"
         onFocus={() => setShowSuggestions(true)}
         onChange={(e) => {
           onChange(e.target.value);
@@ -62,7 +62,7 @@ const BankAutocomplete = ({
       />
 
       {showSuggestions && value?.length > 0 && (
-        <div className="absolute z-[100] w-full mt-1 bg-white border border-brown/10 rounded-lg shadow-xl max-h-52 overflow-y-auto">
+        <div className="absolute z-[100] w-full mt-1 bg-white border border-brown/10 rounded-md shadow-xl max-h-52 overflow-y-auto">
           {filteredBanks.length > 0 ? (
             filteredBanks.map((bank) => (
               <div

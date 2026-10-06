@@ -20,13 +20,16 @@ export default function Navbar({ platformName = "منصة المتاجر" }) {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const navLinks = [
-    { name: "المميزات", path: "/features" },
-    { name: "كيف تعمل؟", path: "/how-it-works" },
-    { name: "خطط الأسعار", path: "/plans" },
-    { name: "عن المنصة", path: "/about" },
-    { name: "تواصل معنا", path: "/contact" },
-  ]
+const navLinks = [
+  { name: "الرئيسية", path: "/" },
+  { name: "المميزات", path: "/features" },
+  { name: "كيف تعمل؟", path: "/how-it-works" },
+  { name: "خطط الأسعار", path: "/plans" },
+  { name: "عن المنصة", path: "/about" },
+  { name: "تواصل معنا", path: "/contact" },
+  { name: "الشكاوى", path: "/complaints" },
+  { name: "سياسة الاستخدام", path: "/terms" },
+]
 
   return (
     <nav 
@@ -40,18 +43,24 @@ export default function Navbar({ platformName = "منصة المتاجر" }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           
-          {/* Logo - شعار منصة التجارة */}
-          <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="w-10 h-10 rounded-xl bg-accent/40 flex items-center justify-center border border-accent group-hover:bg-accent/70 transition-colors">
-              <Store className="w-5 h-5 text-dark" strokeWidth={1.75} />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-lg font-bold text-dark tracking-tight leading-tight">
-                {platformName}
-              </span>
-              <span className="text-[10px] text-brown font-medium">سحابي متكامل</span>
-            </div>
-          </Link>
+          
+          {/* Desktop Buttons - أزرار الدخول والتسجيل */}
+          <div className="hidden md:flex md:items-center gap-3">
+            <Link
+              to="/login"
+              className="px-4 py-2 text-sm font-semibold text-dark hover:text-brown border border-transparent hover:border-accent rounded-md transition-colors inline-flex items-center gap-1.5"
+            >
+              <User className="w-4 h-4 text-brown" strokeWidth={2} />
+              <span>تسجيل الدخول</span>
+            </Link>
+
+            <Link
+              to="/register"
+              className="px-5 py-2.5 text-sm font-semibold bg-dark text-white rounded-md hover:bg-dark/90 shadow-sm hover:shadow transition-all inline-flex items-center gap-1.5"
+            >
+              <span>أنشئ متجرك مجاناً</span>
+            </Link>
+          </div>
 
           {/* Desktop Menu - الروابط للشاشات الكبيرة */}
           <div className="hidden md:flex md:items-center gap-8">
@@ -66,6 +75,7 @@ export default function Navbar({ platformName = "منصة المتاجر" }) {
             ))}
           </div>
 
+<<<<<<< HEAD
           {/* Desktop Buttons - أزرار الدخول والتسجيل */}
           <div className="hidden md:flex md:items-center gap-3">
             <Link
@@ -84,10 +94,25 @@ export default function Navbar({ platformName = "منصة المتاجر" }) {
             </Link>
           </div>
 
+=======
+            
+          {/* Logo - شعار منصة التجارة */}
+          <Link to="/" className="flex items-center gap-2.5 group">
+            <div className="w-10 h-10 rounded-xl bg-accent/40 flex items-center justify-center border border-accent group-hover:bg-accent/70 transition-colors">
+              <Store className="w-5 h-5 text-dark" strokeWidth={1.75} />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-lg font-bold text-dark tracking-tight leading-tight">
+                {platformName}
+              </span>
+              <span className="text-[10px] text-brown font-medium">سحابي متكامل</span>
+            </div>
+          </Link>
+>>>>>>> 36f8532 (Initial commit)
           {/* Mobile Menu Button - زر القائمة للموبايل */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-ligth/30 border border-accent hover:bg-ligth/60 transition-colors"
+            className="md:hidden w-10 h-10 flex items-center justify-center rounded-md bg-ligth/30 border border-accent hover:bg-ligth/60 transition-colors"
             aria-label="القائمة الرئيسية"
           >
             {isOpen ? (
@@ -111,7 +136,7 @@ export default function Navbar({ platformName = "منصة المتاجر" }) {
               key={item.name}
               to={item.path}
               onClick={() => setIsOpen(false)}
-              className="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-dark hover:bg-ligth/20 rounded-lg transition-colors"
+              className="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-dark hover:bg-ligth/20 rounded-md transition-colors"
             >
               {item.name}
             </Link>
@@ -123,7 +148,7 @@ export default function Navbar({ platformName = "منصة المتاجر" }) {
             <Link
               to="/login"
               onClick={() => setIsOpen(false)}
-              className="flex items-center justify-center gap-2 w-full py-2.5 text-sm font-semibold text-dark border border-brown/30 rounded-lg hover:bg-ligth/20 transition-colors"
+              className="flex items-center justify-center gap-2 w-full py-2.5 text-sm font-semibold text-dark border border-brown/30 rounded-md hover:bg-ligth/20 transition-colors"
             >
               <User className="w-4 h-4 text-brown" strokeWidth={2} />
               <span>تسجيل الدخول</span>
@@ -132,7 +157,7 @@ export default function Navbar({ platformName = "منصة المتاجر" }) {
             <Link
               to="/register"
               onClick={() => setIsOpen(false)}
-              className="flex items-center justify-center gap-2 w-full py-2.5 text-sm font-semibold bg-dark text-white rounded-lg hover:bg-dark/90 transition-colors shadow-sm"
+              className="flex items-center justify-center gap-2 w-full py-2.5 text-sm font-semibold bg-dark text-white rounded-md hover:bg-dark/90 transition-colors shadow-sm"
             >
               <Sparkles className="w-4 h-4 text-accent" strokeWidth={2} />
               <span>أنشئ متجرك مجاناً</span>

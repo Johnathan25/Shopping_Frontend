@@ -110,7 +110,11 @@ export default function ForgetPassword() {
               >
                 {loading ? (
                   <span className="flex items-center gap-2">
+<<<<<<< HEAD
                     <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-lg animate-spin"></span>
+=======
+                    <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-md animate-spin"></span>
+>>>>>>> 36f8532 (Initial commit)
                     <span>جاري إرسال الرابط...</span>
                   </span>
                 ) : (

@@ -42,6 +42,13 @@ export default function Contact() {
       email: "kiroloesreda@gmail.com",
       phone: "01270857659",
     },
+    {
+      
+      name: "كيرلس ",
+      role: "تسويق الكتروني",
+      email: "kerosystem12@gmail.com",
+      phone: "01227713425",
+    }
   ];
 
   const handleChange = (e) => {
@@ -101,16 +108,16 @@ export default function Contact() {
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center animate-fadeIn">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/40 border border-accent text-dark text-xs font-bold mb-6">
-            <Sparkles className="w-4 h-4 text-brown" />
+
             <span>نحن هنا لمساعدتك دائماً</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl font-light text-gray-900 tracking-tight mb-4">
-            تواصل مع فريق <span className="font-bold text-dark">المنصة</span>
+            تواصل مع فريق المنصة
           </h1>
 
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed font-normal">
-            سواء كنت تاجراً ترغب في بدء متجرك السحابي المستقل، أو شريكاً بحاجة إلى استفسار فني أو تجاري، يسعدنا التحدث معك.
+            عايز تبدأ متجرك ولسه بتسأل، أو عندك أي استفسار عن شغلك معانا؟ فريقنا جاهز يساعدك ويكلمك خطوة بخطوة.
           </p>
         </div>
       </section>
@@ -119,9 +126,9 @@ export default function Contact() {
       <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            
+
             {/* الجانب الأيمن: بطاقات فريق التواصل ومعلومات المنصة */}
-            <div className="lg:col-span-5 space-y-6">
+            <div className="lg:col-span-12 space-y-6">
               <div>
                 <span className="text-xs font-bold text-brown uppercase tracking-wider block mb-2">
                   فريق العمل والدعم
@@ -135,73 +142,72 @@ export default function Contact() {
               </div>
 
               {/* بطاقات مسؤولي المنصة */}
-              <div className="space-y-4">
-                {contactTeam.map((member, index) => (
-                  <div
-                    key={index}
-                    className="p-5 rounded-2xl border border-accent/80 bg-white hover:border-brown/40 shadow-sm hover:shadow-md transition-all duration-300"
-                  >
-                    <div className="flex justify-between items-start mb-3">
-                      <div>
-                        <h4 className="text-base font-bold text-dark">{member.name}</h4>
-                        <p className="text-xs text-brown font-medium">{member.role}</p>
+              <div className="grid grid-cols-12 gap-y-6 w-full">
+                {contactTeam.map((member, index) => {
+                  // 5/6 من 12 عموداً = 10 أعمدة بالتمام
+                  // الكارت الأول والثالث: من 1 لـ 10 (يترك 2/12 فراغ في الطرف الآخر)
+                  // الكارت الثاني والرابع: من 3 لـ 12 (يبدأ بعد فراغ 2/12)
+                  const isEven = index % 2 === 0;
+                  const placement = isEven
+                    ? "col-span-12 md:col-start-1 md:col-span-7"
+                    : "col-span-12 md:col-start-5 md:col-span-7";
+
+                  return (
+                    <div
+                      key={index}
+                      className={`${placement} p-5 sm:p-6 rounded-2xl border border-accent/80 bg-white hover:border-brown/40 shadow-sm hover:shadow-md transition-all duration-300`}
+                    >
+                      {/* الجزء العلوي: الاسم والصفة والأيقونة */}
+                      <div className="flex items-center justify-between gap-4 mb-4">
+                        <div className="flex items-center gap-3">
+                          <div className="w-11 h-11 rounded-xl bg-accent/30 text-dark flex items-center justify-center flex-shrink-0">
+                            <Store size={20} className="text-dark" />
+                          </div>
+                          <div>
+                            <h4 className="text-base font-bold text-dark leading-tight">
+                              {member.name}
+                            </h4>
+                            <p className="text-xs text-brown font-semibold mt-0.5">
+                              {member.role}
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                      <div className="w-8 h-8 rounded-xl bg-accent/30 flex items-center justify-center text-dark">
-                        <Store size={16} />
+
+                      {/* خط فاصل ناعم */}
+                      <div className="border-t border-accent/50 pt-3.5 space-y-2.5">
+                        {/* الهاتف */}
+                        <div className="flex items-center justify-between text-xs">
+                          <span className="text-gray-500 font-medium">رقم الهاتف / واتساب:</span>
+                          <a
+                            href={`tel:${member.phone}`}
+                            dir="ltr"
+                            className="flex items-center gap-2 font-mono font-bold text-dark hover:text-brown transition-colors bg-ligth/30 hover:bg-ligth/60 px-2.5 py-1 rounded-lg border border-accent/60"
+                          >
+                            <span>{member.phone}</span>
+                            <Phone size={13} className="text-brown" />
+                          </a>
+                        </div>
+
+                        {/* البريد الإلكتروني */}
+                        <div className="flex items-center justify-between text-xs">
+                          <span className="text-gray-500 font-medium">البريد الإلكتروني:</span>
+                          <a
+                            href={`mailto:${member.email}`}
+                            dir="ltr"
+                            className="flex items-center gap-2 font-mono text-dark hover:text-brown transition-colors bg-ligth/30 hover:bg-ligth/60 px-2.5 py-1 rounded-lg border border-accent/60"
+                          >
+                            <span className="truncate max-w-[190px] sm:max-w-none">{member.email}</span>
+                            <Mail size={13} className="text-brown flex-shrink-0" />
+                          </a>
+                        </div>
                       </div>
                     </div>
-
-                    <div className="space-y-2 pt-2 border-t border-accent/40 text-xs text-gray-600">
-                      {/* الهاتف */}
-                      <a
-                        href={`tel:${member.phone}`}
-                        dir="ltr"
-                        className="flex items-center gap-2 hover:text-dark transition-colors font-medium justify-end"
-                      >
-                        <span>{member.phone}</span>
-                        <Phone size={14} className="text-brown" />
-                      </a>
-
-                      {/* البريد الإلكتروني */}
-                      <a
-                        href={`mailto:${member.email}`}
-                        dir="ltr"
-                        className="flex items-center gap-2 hover:text-dark transition-colors font-mono justify-end"
-                      >
-                        <span>{member.email}</span>
-                        <Mail size={14} className="text-brown" />
-                      </a>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
-              {/* معلومات إضافية وأوقات العمل */}
-              <div className="p-6 rounded-2xl bg-ligth/20 border border-accent/60 space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-white border border-accent flex items-center justify-center text-dark flex-shrink-0">
-                    <Clock size={16} />
-                  </div>
-                  <div>
-                    <h5 className="text-xs font-bold text-dark mb-0.5">أوقات العمل والتواجد</h5>
-                    <p className="text-xs text-gray-500 font-normal">
-                      متاحون للرد على الاستفسارات على مدار الساعة طوال أيام الأسبوع لدعم نجاح مبيعاتك.
-                    </p>
-                  </div>
-                </div>
 
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-white border border-accent flex items-center justify-center text-dark flex-shrink-0">
-                    <ShieldCheck size={16} />
-                  </div>
-                  <div>
-                    <h5 className="text-xs font-bold text-dark mb-0.5">سرعة الاستجابة</h5>
-                    <p className="text-xs text-gray-500 font-normal">
-                      متوسط الرد على الرسائل لا يتجاوز ساعتين خلال أوقات الذروة.
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
 
 

@@ -108,18 +108,19 @@ export default function Features() {
         </div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center animate-fadeIn">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/40 border border-accent text-dark text-xs font-bold mb-6">
-            <Sparkles className="w-4 h-4 text-brown" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-accent/40 border border-accent text-dark text-xs font-bold mb-6">
             <span>بنيت لخدمة نجاحك التجاري</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl font-light text-gray-900 tracking-tight mb-4">
+            <span className="font-bold text-dark">
             مميزات مصممة لتطلق متجرك <br />
-            <span className="font-bold text-dark">بسرعة فائقة وبأعلى جودة</span>
+
+            بسرعة فائقة وبأعلى جودة</span>
           </h1>
 
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed font-normal">
-            جمعنا لك كل الأدوات التي تحتاجها للبيع والتوسع، في منصة سحابية واحدة باشتراك مرن وبدون تعقيدات تقنية.
+            جمعنا لك كل الأدوات التي تحتاجها للبيع والتوسع، في منصة واحدة باشتراك مرن وبدون تعقيدات تقنية.
           </p>
         </div>
       </section>
@@ -159,51 +160,60 @@ export default function Features() {
 
       {/* شبكة المميزات المقترحة والتفصيلية */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-xs font-bold text-brown uppercase tracking-wider block mb-2">
-              قدرات المنصة الشاملة
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-light text-gray-900">
-              كل ما تحتاجه لإدارة وتخصيص <span className="font-bold text-dark">متجرك السحابي</span>
-            </h2>
+      <div className="relative max-w-5xl mx-auto py-10">
+  <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+    
+    {/* الجانب الأيمن: 3 ميزات */}
+    <div className="space-y-4 flex-1 w-full">
+      {featureList.slice(0, 3).map((feature, idx) => {
+        const Icon = feature.icon;
+        return (
+          <div
+            key={idx}
+            className="p-5 bg-white border border-accent/70 rounded-2xl shadow-sm hover:border-dark hover:translate-x-2 transition-all flex items-center gap-4"
+          >
+            <div className="w-10 h-10 rounded-xl bg-accent/30 text-dark flex items-center justify-center flex-shrink-0">
+              <Icon size={20} />
+            </div>
+            <div>
+              <h5 className="text-sm font-bold text-dark">{feature.title}</h5>
+              <p className="text-xs text-gray-500 mt-0.5 line-clamp-2">{feature.description}</p>
+            </div>
           </div>
+        );
+      })}
+    </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featureList.map((feature, idx) => {
-              const Icon = feature.icon;
-              return (
-                <div
-                  key={idx}
-                  className="p-8 rounded-3xl border border-accent/80 bg-white hover:border-brown/40 hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-5">
-                      <div className="w-12 h-12 rounded-2xl bg-accent/30 flex items-center justify-center text-dark">
-                        <Icon size={22} strokeWidth={1.8} />
-                      </div>
-                      <span className="text-[11px] font-bold text-brown bg-ligth/30 px-2.5 py-1 rounded-lg border border-accent/60">
-                        {feature.tag}
-                      </span>
-                    </div>
+    {/* المركز: النواة (المتجر الإلكتروني) */}
+    <div className="w-48 h-48 rounded-full bg-dark text-white flex flex-col items-center justify-center text-center p-4 shadow-xl border-4 border-accent/40 flex-shrink-0 relative">
+      
+      <span className="font-bold text-base">متجرك المستقل</span>
+      <span className="text-[11px] text-gray-300 mt-1">كل شيء متصل هنا</span>
+    </div>
 
-                    <h4 className="text-lg font-bold text-dark mb-2.5">
-                      {feature.title}
-                    </h4>
-                    <p className="text-sm text-gray-600 leading-relaxed font-normal">
-                      {feature.description}
-                    </p>
-                  </div>
-
-                  <div className="mt-6 pt-4 border-t border-accent/40 flex items-center gap-1.5 text-xs font-semibold text-dark">
-                    <CheckCircle2 size={15} className="text-brown" />
-                    <span>متاح ومدمج وجاهز للاستخدام</span>
-                  </div>
-                </div>
-              );
-            })}
+    {/* الجانب الأيسر: باقي الميزات */}
+    <div className="space-y-4 flex-1 w-full">
+      {featureList.slice(3, 6).map((feature, idx) => {
+        const Icon = feature.icon;
+        return (
+          <div
+            key={idx}
+            className="p-5 bg-white border border-accent/70 rounded-2xl shadow-sm hover:border-dark hover:-translate-x-2 transition-all flex items-center gap-4"
+          >
+            <div className="w-10 h-10 rounded-xl bg-accent/30 text-dark flex items-center justify-center flex-shrink-0">
+              <Icon size={20} />
+            </div>
+            <div>
+              <h5 className="text-sm font-bold text-dark">{feature.title}</h5>
+              <p className="text-xs text-gray-500 mt-0.5 line-clamp-2">{feature.description}</p>
+            </div>
           </div>
-        </div>
+        );
+      })}
+    </div>
+
+  </div>
+</div>
       </section>
 
       {/* قسم الدعوة للبدء (CTA) */}

@@ -18,26 +18,26 @@ import {
 export default function About() {
   const roles = [
     {
-      title: "مدير النظام (Super Admin)",
+      title: "مدير النظام ",
       subtitle: "إدارة البنية التحتية",
       description:
-        "المسؤول عن مراقبة أداء المنصة المركزية، استقرار الخوادم السحابية، إدارة خطط الاشتراكات وبوابات الدفع، وضمان عزل وحماية بيانات المتاجر المشتركة.",
+      "فريق الدعم الفني المسؤول عن أمان وسرعة الموقع، استقرار شغلك 24 ساعة، وحماية بيانات مبيعاتك وزباينك عشان تركز في تجارتك وبس.",
       icon: ShieldCheck,
       badge: "الإدارة العليا",
     },
     {
-      title: "التاجر المشترك (Customer / Merchant)",
+      title: "التاجر المشترك ",
       subtitle: "صاحب المتجر المستقل",
       description:
-        "يشترك في المنصة ويحصل على متجره بنطاق فرعي مخصص (subdomain). يتحكم بالكامل في الهوية البصرية (الألوان، الخطوط، شكل البطاقات)، ويدير المنتجات والمخزون والمبيعات عبر لوحة تحكم ذكية.",
+"بيسجّل حسابه ويستلم متجره برابط واسم خاص بيه في دقايق. يقدر يختار ألوانه وتصميمه على ذوقه، ويدير بضاعته ومخزونه ومبيعاته كلها من لوحة تحكم سهلة وسريعة", 
       icon: Store,
       badge: "شريك النجاح",
     },
     {
-      title: "المشتري النهائي (Client / Shopper)",
+      title: "المشتري النهائي ",
       subtitle: "المستهلك النهائي",
       description:
-        "يدخل على أي متجر من المتاجر المستقلة للتصفح والشراء السلس، مع تجربة تسوق سريعة، طرق دفع متعددة، وتتبع مباشر لحالة الطلب والشحن.",
+      "يدخل على متجرك بكل سهولة، يختار المنتجات اللي عجباه، يشتري ويدفع بالطريقة اللي تريحه، ويتابع خطوة بخطوة لحد ما الأوردر يوصله لحد باب البيت.",
       icon: ShoppingBag,
       badge: "العميل النهائي",
     },
@@ -45,23 +45,23 @@ export default function About() {
 
   const pillars = [
     {
-      title: "عزل تام للبيانات (Multi-Tenancy)",
-      desc: "لكل تاجر بيئته وقاعدة بياناته الخاصة مع نطاق فرعي فريد، مما يضمن أقصى معايير الخصوصية والأمان.",
+      title: "عزل تام للبيانات ",
+      desc:"متجر منفصل وخاص بيك لوحدك، برابط مخصص لنشاطك، وحماية كاملة لحساباتك ومعاملاتك من غير أي تداخل مع غيرك.",
       icon: Server,
     },
     {
-      title: "تخصيص بصري لا محدود",
-      desc: "حرية كاملة للتاجر في اختيار الألوان، الخطوط، أشكال الأزرار، وتنسيق أقسام واجهة متجره دون لمس سطر برمجي.",
+      title: "تخصيص بصري",
+      desc:"تحكم كامل في مظهر متجرك؛ نسّق الألوان والأزرار والأقسام بالطريقة اللي تعجب زباينك وبكل سهولة وبدون أي مجهود تقني.", 
       icon: Palette,
     },
     {
       title: "سرعة وأداء فائق",
-      desc: "بنية سحابية مصممة للتعامل مع آلاف الزيارات وعمليات الشراء المتزامنة بكفاءة واستقرار دائم.",
+      desc:"سرعة عالية واستقرار مستمر؛ نظام قوي يستحمل آلاف الزوار والطلبات في نفس اللحظة بكفاءة عالية وبدون أي تهنيج.", 
       icon: Zap,
     },
     {
-      title: "تجارة رقمية بلا حدود",
-      desc: "حل متكامل يربط المتاجر ببوابات الدفع الإلكتروني وشركات الشحن بسلاسة تامة لتمكين التاجر من النمو.",
+      title: "تجارة رقمية",
+      desc:"ربط سريع وجاهز مع كل وسائل الدفع وشركات الشحن، عشان تدير توصيل طلباتك واستلام أرباحك من مكان واحد ومن غير أي مجهود.", 
       icon: Globe2,
     },
   ];
@@ -75,19 +75,17 @@ export default function About() {
         </div>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center animate-fadeIn">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/40 border border-accent text-dark text-xs font-bold mb-6">
-            <Sparkles className="w-4 h-4 text-brown" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-accent/40 border border-accent text-dark text-xs font-bold mb-6">
+            
             <span>رؤيتنا ورسالتنا</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-gray-900 tracking-tight mb-6 leading-tight">
-            نمكّن التجّار من إطلاق <br />
-            <span className="font-bold text-dark">متاجر مستقلة بهوية فريدة</span>
-          </h1>
-
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight mb-6 leading-snug">
+  نساعد التجار علي إنشاء <br />
+  متاجر مستقلة بهوية خاصة
+</h1>
           <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed font-normal">
-            منصتنا هي حل سحابي متطور (Multi-Tenant SaaS) صُمم ليختصر رحلة إطلاق التجارة الإلكترونية؛ حيث نوفر منصة مركزية قوية تمنح كل تاجر متجراً منعزلاً بالكامل وقابلاً للتخصيص الشامل ليخدم عملاءه بأعلى مستويات الاحترافية.
-          </p>
+مكان واحد بيسهّل عليك بداية تجارتك , بنقدملك متجر كامل وخاص بيك لوحدك، تقدر تظبط تصميمه على ذوقك وتدير منتجاتك وطلباتك بكل راحة واحترافية.          </p>
         </div>
       </section>
 
@@ -99,7 +97,8 @@ export default function About() {
               منظومة العمل المتكاملة
             </span>
             <h2 className="text-3xl sm:text-4xl font-light text-gray-900">
-              كيف تترابط <span className="font-bold text-dark">أطراف المنصة؟</span>
+              <span className="font-bold text-dark">
+              كيف تترابط أطراف المنصة؟</span>
             </h2>
             <p className="text-gray-500 text-sm max-w-xl mx-auto mt-2">
               بنية ثلاثية تضمن لكل مستخدم التجربة والأدوات المناسبة لمهامه
@@ -147,100 +146,91 @@ export default function About() {
       </section>
 
       {/* Pillars Section */}
-      <section className="py-20 bg-ligth/20 border-y border-accent/40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-xs font-bold text-brown uppercase tracking-wider block mb-2">
-              القيمة التقنية
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-light text-gray-900">
-              لماذا يختار أصحاب المتاجر <span className="font-bold text-dark">منصتنا؟</span>
-            </h2>
-          </div>
+    <section className="py-20 bg-ligth/20 border-y border-accent/40 select-none overflow-hidden">
+  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    {/* الترويسة */}
+    <div className="text-center mb-20">
+      <span className="text-xs font-bold text-brown uppercase tracking-wider block mb-2">
+        القيمة والمميزات
+      </span>
+      <h2 className="text-3xl sm:text-4xl font-light text-gray-900">
+        ليه أصحاب المتاجر بيختاروا <span className="font-bold text-dark">منصتنا؟</span>
+      </h2>
+    </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {pillars.map((pillar, idx) => {
-              const Icon = pillar.icon;
-              return (
-                <div
-                  key={idx}
-                  className="bg-white border border-accent/60 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all"
-                >
-                  <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-dark" strokeWidth={1.8} />
+    {/* الحاوية الأساسية */}
+    <div className="relative">
+      
+      {/* الخط الرأسي المتصل - مضمون بستايل مباشر ولون واضح */}
+      <span 
+        aria-hidden="true"
+        className="absolute top-4 bottom-4 w-0.5 bg-gray-400 right-4 md:right-1/2 md:translate-x-1/2 block pointer-events-none"
+        style={{ zIndex: 1 }}
+      />
+
+      <div className="space-y-12 md:space-y-16 relative" style={{ zIndex: 2 }}>
+        {pillars.map((pillar, idx) => {
+          const Icon = pillar.icon;
+          const isRight = idx % 2 === 0;
+
+          return (
+            <div
+              key={idx}
+              className={`relative flex items-center md:justify-between ${
+                isRight ? "md:flex-row-reverse" : "md:flex-row"
+              }`}
+            >
+              {/* مساحة موازنة للشاشات الكبيرة */}
+              <div className="hidden md:block md:w-[44%]" />
+
+              {/* النقطة المركزية التي تقع فوق الخط */}
+              <div className="absolute right-4 md:right-1/2 translate-x-1/2 w-8 h-8 rounded-full bg-white border-2 border-dark flex items-center justify-center shadow-md">
+                <span className="w-2.5 h-2.5 rounded-full bg-brown block" />
+              </div>
+
+              {/* كارت المحتوى */}
+              <div className="w-full pr-14 md:pr-0 md:w-[44%]">
+                <div className="bg-white border border-accent/70 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-brown/40 transition-all duration-300">
+                  <div className="flex items-center gap-3.5 mb-3">
+                    <div className="w-10 h-10 bg-accent/30 rounded-xl flex items-center justify-center flex-shrink-0 text-dark">
+                      <Icon className="w-5 h-5 text-dark" strokeWidth={1.8} />
+                    </div>
+                    <h4 className="text-base font-bold text-dark">
+                      {pillar.title}
+                    </h4>
                   </div>
-                  <h4 className="text-base font-bold text-dark mb-2">
-                    {pillar.title}
-                  </h4>
                   <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
                     {pillar.desc}
                   </p>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Mission & Story Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white border border-accent/80 rounded-3xl p-8 sm:p-12 shadow-sm">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-              <div>
-                <span className="text-xs font-bold text-brown uppercase tracking-wider block mb-2">
-                  الرسالة والهدف
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-bold text-dark mb-4 leading-tight">
-                  التحكم الكامل بمتجرك، دون عبء التكاليف التقنية.
-                </h3>
-                <p className="text-sm text-gray-600 leading-relaxed font-normal mb-4">
-                  هدفنا هو إلغاء الحاجة لتوظيف فرق تطوير وتكبد ميزانيات بناء المتاجر من الصفر. نقدم لكل تاجر بيئة برمجية جاهزة بالكامل تُمكنه من تعديل ألوانه، وتصميم صفحته، ومتابعة مبيعاته بلمسات بسيطة.
-                </p>
-                <div className="flex items-center gap-4 text-xs font-semibold text-dark">
-                  <div className="flex items-center gap-1.5">
-                    <TrendingUp size={16} className="text-brown" />
-                    <span>توسع سريع</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <ShieldCheck size={16} className="text-brown" />
-                    <span>أمان مستمر</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-ligth/30 border border-accent/60 rounded-2xl p-6 sm:p-8 space-y-4">
-                <div className="border-b border-accent/50 pb-3">
-                  <h5 className="text-sm font-bold text-dark mb-1">الاستقلالية التامة</h5>
-                  <p className="text-xs text-gray-500 font-normal">نطاق فرعي مخصص يحمل اسم علامتك دون ظهور اسم منصتنا للزبائن.</p>
-                </div>
-                <div className="border-b border-accent/50 pb-3">
-                  <h5 className="text-sm font-bold text-dark mb-1">مرونة المظهر</h5>
-                  <p className="text-xs text-gray-500 font-normal">لوحة تحكم حية تعاين التعديلات على شكل البطاقات، والخطوط، والظلال فورياً.</p>
-                </div>
-                <div>
-                  <h5 className="text-sm font-bold text-dark mb-1">بنية سحابية تحت الطلب</h5>
-                  <p className="text-xs text-gray-500 font-normal">نظام يتسع لنمو تجارتك من أول طلب حتى مئات الآلاف شهرياً.</p>
-                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          );
+        })}
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+      
 
       {/* CTA Section */}
-      <section className="py-20 bg-ligth/20 border-t border-accent/40 text-center">
+      <section className="py-20 bg-ligth/20 border-t border-accent/40 text-center bg-dark text-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-light text-gray-900 mb-4">
-            جاهز للانضمام إلى <span className="font-bold text-dark">مجتمع التجار؟</span>
+            <span className="font-bold text-white">
+            جاهز للانضمام إلى مجتمع التجار؟</span>
           </h2>
-          <p className="text-sm sm:text-base text-gray-600 mb-8 font-normal">
+          <p className="text-sm sm:text-base text-white mb-8 font-normal">
             احصل على نسختك من المتجر المستقل وابدأ البيع لعملائك بتجربة مخصصة لك بالكامل.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               to="/register"
-              className="px-8 py-3.5 bg-dark text-white rounded-xl hover:bg-dark/90 transition-all font-semibold text-sm shadow-md flex items-center gap-2 group"
+              className="px-8 py-3.5 bg-white text-dark rounded-xl hover:bg-dark/90 transition-all font-semibold text-sm shadow-md flex items-center gap-2 group"
             >
               <span>ابدأ متجرك مجاناً</span>
               <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />

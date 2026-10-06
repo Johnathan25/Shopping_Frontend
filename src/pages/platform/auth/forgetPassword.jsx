@@ -110,16 +110,13 @@ export default function ForgetPassword() {
               >
                 {loading ? (
                   <span className="flex items-center gap-2">
-                    <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+                    <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-lg animate-spin"></span>
                     <span>جاري إرسال الرابط...</span>
                   </span>
                 ) : (
                   <>
                     <span>إرسال رابط إعادة التعيين</span>
-                    <Sparkles
-                      size={16}
-                      className="text-accent group-hover:rotate-12 transition-transform"
-                    />
+                    
                   </>
                 )}
               </button>
@@ -140,11 +137,6 @@ export default function ForgetPassword() {
           </div>
         </div>
 
-        {/* شارة الأمان السفلية */}
-        <div className="flex items-center justify-center gap-2 text-xs text-gray-400 mt-6">
-          <ShieldCheck size={15} className="text-brown" />
-          <span>إعادة تعيين كلمة المرور محمية بروابط مشفرة لمرة واحدة فقط</span>
-        </div>
       </div>
     </div>
   );

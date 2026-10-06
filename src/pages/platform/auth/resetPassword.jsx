@@ -180,10 +180,7 @@ export default function ResetPassword() {
                 ) : (
                   <>
                     <span>تحديث كلمة المرور</span>
-                    <Sparkles
-                      size={16}
-                      className="text-accent group-hover:rotate-12 transition-transform"
-                    />
+                    
                   </>
                 )}
               </button>
@@ -214,11 +211,7 @@ export default function ResetPassword() {
           </div>
         </div>
 
-        {/* شارة الأمان السفلية */}
-        <div className="flex items-center justify-center gap-2 text-xs text-gray-400 mt-6">
-          <ShieldCheck size={15} className="text-brown" />
-          <span>عملية التعيين مؤمنة وتنتهي صلاحية الرمز فور الاستخدام</span>
-        </div>
+      
       </div>
     </div>
   );

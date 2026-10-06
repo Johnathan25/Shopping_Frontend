@@ -15,7 +15,8 @@ import {
   ArrowLeft,
   Sparkles,
   ShieldCheck,
-  PhoneCall
+  PhoneCall,
+  Book
 } from "lucide-react"
 
 export default function Register() {
@@ -27,7 +28,8 @@ export default function Register() {
     subdomain: "",
     email: "",
     password: "",
-    confirmPassword: ""
+    confirmPassword: "",
+    newSlug: ""
   })
 
   const [loading, setLoading] = useState(false)
@@ -39,9 +41,9 @@ export default function Register() {
     const { name, value } = e.target
     
     // تنظيف النطاق الفرعي تلقائياً (أحرف إنجليزية صغيرة، أرقام وشرطات فقط)
-    if (name === "subdomain") {
+    if (name === "newSlug") {
       const sanitized = value.toLowerCase().replace(/[^a-z0-9-]/g, "")
-      setForm(prev => ({ ...prev, subdomain: sanitized }))
+      setForm(prev => ({ ...prev, newSlug: sanitized }))
       return
     }
 
@@ -83,7 +85,8 @@ export default function Register() {
         phoneNumber: form.phoneNumber,
         subdomain: form.subdomain,
         email: form.email,
-        password: form.password
+        password: form.password,
+        newSlug: form.newSlug
       })
 
       if (response.data.accessToken) {
@@ -201,7 +204,7 @@ export default function Register() {
             </div>
 
                         <div>
-              <label htmlFor="email" className="block text-xs font-bold text-dark mb-1.5">
+              <label htmlFor="phoneNumber" className="block text-xs font-bold text-dark mb-1.5">
                رقم الهاتف
               </label>
               <div className="relative">
@@ -214,6 +217,28 @@ export default function Register() {
                   value={form.phoneNumber}
                   onChange={handleChange}
                   placeholder="01270857659"
+                  required
+                  className="w-full pr-10 pl-4 py-2.5 bg-ligth/10 border border-accent/70 rounded-xl focus:outline-none focus:border-dark focus:bg-white text-gray-900 placeholder:text-gray-400 text-sm transition-all"
+                />
+              </div>
+            </div>
+
+{/* slug */}
+
+           <div>
+              <label htmlFor="newSlug" className="block text-xs font-bold text-dark mb-1.5">
+              ادخل نطاق فرعي لمتجرك 
+              </label>
+              <div className="relative">
+                <Book className="absolute right-3.5 top-1/2 -translate-y-1/2 text-brown w-4 h-4 pointer-events-none" />
+                <input
+                  id="newSlug"
+                  type="newSlug"
+                  dir="ltr"
+                  name="newSlug"
+                  value={form.newSlug}
+                  onChange={handleChange}
+                  placeholder="مثال: myshop"
                   required
                   className="w-full pr-10 pl-4 py-2.5 bg-ligth/10 border border-accent/70 rounded-xl focus:outline-none focus:border-dark focus:bg-white text-gray-900 placeholder:text-gray-400 text-sm transition-all"
                 />
@@ -318,7 +343,7 @@ export default function Register() {
                 <Link to="/privacy" className="text-dark hover:underline font-semibold">
                   سياسة الخصوصية
                 </Link>{" "}
-                الخاصة بالمنصة السحابية.
+                الخاصة بالمنصة.
               </label>
             </div>
 
@@ -336,7 +361,6 @@ export default function Register() {
               ) : (
                 <>
                   <span>إطلاق متجري الآن</span>
-                  <Sparkles size={16} className="text-accent group-hover:rotate-12 transition-transform" />
                 </>
               )}
             </button>
@@ -356,11 +380,6 @@ export default function Register() {
           </div>
         </div>
 
-        {/* شارة الأمان */}
-        <div className="flex items-center justify-center gap-2 text-xs text-gray-400 mt-6">
-          <ShieldCheck size={15} className="text-brown" />
-          <span>بيانات متجرك معزولة بالكامل ومحمية بنظام تشفير سحابي متقدم</span>
-        </div>
       </div>
     </div>
   )

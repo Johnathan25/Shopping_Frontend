@@ -133,15 +133,15 @@ export default function Plans() {
     },
     {
       q: "هل توجد أي عمولة على مبيعات متجري؟",
-      a: "لا نأخذ أي نسبة أو عمولة على مبيعاتك إطلاقاً؛ كل ما تحققه من أرباح يذهب لحسابك بالكامل باستثناء رسوم بوابات الدفع البنكية المعتادة.",
+      a: "لا نأخذ أي نسبة أو عمولة على مبيعاتك إطلاقاً؛ كل ما تحققه من أرباح يذهب لحسابك بالكامل .",
     },
     {
-      q: "كيف يعمل النطاق الفرعي (Subdomain)؟",
+      q: "كيف يعمل النطاق الفرعي؟",
       a: "فور التسجيل، يتم حجز رابط فوري لمتجرك مثل (yourstore.mdkark.com) يعمل بشكل فوري مع عزل كامل لقاعدة بياناتك وتصميمك.",
     },
     {
       q: "هل يوجد فترة تجريبية مجانية؟",
-      a: "نعم، نقدم فترة تجربة مجانية لمدة 14 يوماً بدون الحاجة لإدخال أي بطاقة بنكية لاختبار كافة الميزات.",
+      a: "نعم، نقدم فترة تجربة مجانية لمدة 7 أيام بدون الحاجة لإدخال أي بطاقة بنكية لاختبار كافة الميزات.",
     },
   ];
 
@@ -155,16 +155,17 @@ export default function Plans() {
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center animate-fadeIn">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/40 border border-accent text-dark text-xs font-bold mb-6">
-            <Sparkles className="w-4 h-4 text-brown" />
+            
             <span>تسعير واضح وشفاف بدون مصاريف خفية</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl font-light text-gray-900 tracking-tight mb-4">
-            اختر الخطة المناسبة <span className="font-bold text-dark">لنمو تجارتك</span>
+            <span className="font-bold text-dark">
+            اختر الخطة المناسبة لنمو تجارتك</span>
           </h1>
 
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed font-normal mb-10">
-            ابدأ صغيراً وتوسع مع نمو مبيعاتك. كل الخطط تشمل متجراً مستقلاً مع عزل تام للبيانات وتحكم في الهوية.
+            ابدأ بالباقة اللي تريحك وكبر تجارتك وقت ما تحب.. كل خطة معاها متجرك المستقل برابط واسم خاص بيك، وشكل على مزاجك، وأمان كامل لبياناتك.
           </p>
 
           {/* مفتاح التبديل (Monthly / Yearly Toggle) */}
@@ -190,9 +191,8 @@ export default function Plans() {
               }`}
             >
               <span>الدفع السنوي</span>
-              <span className="bg-accent/70 text-dark text-[11px] font-bold px-2 py-0.5 rounded-md border border-accent">
                 خصم 20%
-              </span>
+              
             </button>
           </div>
         </div>
@@ -414,7 +414,7 @@ export default function Plans() {
           {/* شارة الأمان السفلية */}
           <div className="flex items-center justify-center gap-2 text-xs text-gray-400 mt-12">
             <ShieldCheck size={16} className="text-brown" />
-            <span>دفع آمن بنسبة 100% مع ضمان استرجاع الأموال خلال 14 يوماً</span>
+            <span>دفع آمن بنسبة 100% مع ضمان استرجاع الأموال خلال 7 أيام</span>
           </div>
         </div>
       </section>

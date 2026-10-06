@@ -80,7 +80,6 @@ export default function Navbar({ platformName = "منصة المتاجر" }) {
               to="/register"
               className="px-5 py-2.5 text-sm font-semibold bg-dark text-white rounded-lg hover:bg-dark/90 shadow-sm hover:shadow transition-all inline-flex items-center gap-1.5"
             >
-              <Sparkles className="w-4 h-4 text-accent" strokeWidth={2} />
               <span>أنشئ متجرك مجاناً</span>
             </Link>
           </div>

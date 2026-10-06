@@ -17,6 +17,8 @@ import Contact from "./pages/platform/home/contact";
 import Plans from "./pages/platform/home/plan";
 import Features from "./pages/platform/home/features";
 import Sketch from "./pages/platform/home/howToWork";
+import Terms from "./pages/platform/home/terms";
+import Complaints from "./pages/platform/home/complaints";
 
 function App() {
   const host = window.location.hostname;
@@ -30,20 +32,23 @@ function App() {
         <Routes>
           {/* platform routes */}
           <Route element={<PlatformLayout />}>
-             <Route path="/" element={<Home/>} />
-             <Route path="/login" element={<Login/>} />
-             <Route path="/register" element={<Register/>} />
-             <Route path="/forget-password" element={<ForgetPassword/>} />
-             <Route path="/reset-password" element={<ResetPassword/>} />
-             <Route path="/About" element={<About/>} />
-             <Route path="/contact" element={<Contact/>} />
-             <Route path="/plans" element={<Plans/>} />
-             <Route path="/features" element={<Features/>} />
-             <Route path="/how-it-works" element={<Sketch/>} />
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/forget-password" element={<ForgetPassword />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/plans" element={<Plans />} />
+            <Route path="/features" element={<Features />} />
+            <Route path="/how-it-works" element={<Sketch />} />
+
+            <Route path="/terms" element={<Terms />} />
+
+            <Route path="/complaints" element={<Complaints />} />
 
 
 
-             
 
 
 
@@ -51,7 +56,8 @@ function App() {
 
 
 
-             
+
+
           </Route>
 
           {/* admin dashboard */}
@@ -86,7 +92,7 @@ function App() {
         <Routes>
           {/* slug layout routes */}
           <Route element={<SlugLayout />}>
-          <Route path="/" element={<div></div>} />
+            <Route path="/" element={<div></div>} />
           </Route>
         </Routes>
       )}

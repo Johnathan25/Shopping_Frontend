@@ -89,8 +89,7 @@ export default function Login() {
               <Store className="w-7 h-7 text-dark" strokeWidth={1.8} />
             </div>
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-2">
-              مرحباً بك مجدداً
-            </h1>
+تسجيل الدخول            </h1>
             <p className="text-sm text-gray-500 font-normal leading-relaxed">
               سجّل دخولك للوصول إلى لوحة تحكم متجرك السحابي
             </p>
@@ -174,7 +173,6 @@ export default function Login() {
               ) : (
                 <>
                   <span>تسجيل الدخول</span>
-                  <Sparkles size={16} className="text-accent group-hover:rotate-12 transition-transform" />
                 </>
               )}
             </button>
@@ -194,11 +192,7 @@ export default function Login() {
           </div>
         </div>
 
-        {/* شارة الأمان السفلية */}
-        <div className="flex items-center justify-center gap-2 text-xs text-gray-400 mt-6">
-          <ShieldCheck size={15} className="text-brown" />
-          <span>اتصال مشفر وآمن عبر بنية تحتية سحابية مستقلة</span>
-        </div>
+       
       </div>
     </div>
   )

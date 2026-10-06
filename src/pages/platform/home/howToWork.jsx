@@ -173,8 +173,8 @@ export default function Sketch() {
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#3368a00d_1px,transparent_1px),linear-gradient(to_bottom,#3368a00d_1px,transparent_1px)] bg-[size:32px_32px]" />
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/40 border border-accent text-dark text-xs font-bold mb-4">
-            <Sparkles className="w-4 h-4 text-brown" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-accent/40 border border-accent text-dark text-xs font-bold mb-4">
+           
             <span>المخطط المعماري التفاعلي (System Architecture Flow)</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-light text-gray-900 tracking-tight mb-3">
